@@ -19,6 +19,6 @@ RUN apt-get update && \
 
 ADD supervisord.conf /etc/supervisor/supervisord.conf
 
-VOLUME /opt/ros/melodic/share/wamv_description
+VOLUME ["/opt/ros/melodic/share/wamv_description", "/opt/ros/melodic/share/wamv_gazebo"]
 
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
